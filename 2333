@@ -1,0 +1,26 @@
+# --- required (both endpoints need these to start) ---
+SUPABASE_URL=http://127.0.0.1:54321          # your Supabase project's API URL (Project Settings -> API)
+SUPABASE_SERVICE_ROLE_KEY=                   # service-role key: server-side ONLY, never in browser code
+ANALYZE_API_KEY=                             # long random string; callers send it as "Authorization: Bearer <key>"
+GOOGLE_PLACES_API_KEY=                       # Google Places API (New) key: server-side ONLY, never in browser code
+
+# Required for any REAL (non-local) Supabase project - server.js refuses to write
+# to any host that isn't localhost/127.0.0.1/host.docker.internal unless this is
+# set to that EXACT hostname. Leave unset for a local `supabase start` instance.
+# ANALYZE_CONFIRM_REMOTE_DB=xxxx.supabase.co
+
+# --- optional: /api/analyze ---
+# ANALYZE_USER_AGENT=AllSafeSiteAnalyzer/0.1 (+https://YOUR-DOMAIN/bot; contact you@YOUR-DOMAIN)
+# ANALYZE_DEADLINE_MS=20000                  # crawl time budget per request (lower it on short serverless timeouts)
+# ANALYZE_HTTP_TIMEOUT_MS=6000               # per-page timeout
+
+# --- optional: /api/discover ---
+# DISCOVER_API_KEY=                          # bearer token for /api/discover; falls back to ANALYZE_API_KEY if unset
+# DISCOVER_MAX_LIMIT=60                      # hard cap on a request's "limit" (Google's own per-query max is 60)
+# DISCOVER_MAX_PAGES=5                       # pagination loop cap
+# DISCOVER_PAGE_DELAY_MS=150                 # delay between pages, milliseconds
+# DISCOVER_REGION_CODE=US                    # passed to Google; also the address-country fallback
+# DISCOVER_TIMEOUT_MS=10000                  # per-request timeout to Google
+
+# --- optional: local server ---
+# PORT=8787                                  # server.js only
