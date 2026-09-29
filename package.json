@@ -1,0 +1,20 @@
+{
+  "name": "allsafe-analyze",
+  "version": "0.1.0",
+  "description": "AllSafe Analyze stage: verifies a local business's web presence and records evidence-backed checks",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test --test-reporter=spec test/unit.test.js test/discover.unit.test.js test/discover.persist.test.js test/score.unit.test.js test/score.persist.test.js test/score-all-campaigns.test.js test/analyze-scoring.test.js test/smoke.test.js",
+    "test:unit": "node --test --test-reporter=spec test/unit.test.js",
+    "test:discover": "node --test --test-reporter=spec test/discover.unit.test.js test/discover.persist.test.js",
+    "test:score": "node --test --test-reporter=spec test/score.unit.test.js test/score.persist.test.js test/score-all-campaigns.test.js test/analyze-scoring.test.js",
+    "test:smoke": "node --test --test-reporter=spec test/smoke.test.js",
+    "analyze": "node src/cli.js analyze",
+    "live": "node scripts/live-test.mjs"
+  }
+}

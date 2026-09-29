@@ -1,0 +1,6 @@
+{
+  "functions": {
+    "api/analyze.js": { "maxDuration": 30 },
+    "api/discover.js": { "maxDuration": 60 }
+  }
+}
